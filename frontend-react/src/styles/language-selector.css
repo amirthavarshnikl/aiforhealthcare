@@ -1,0 +1,46 @@
+/* ══════════════════════════════════════════════════════════════ */
+/* LANGUAGE SELECTOR STYLES */
+/* ══════════════════════════════════════════════════════════════ */
+
+.language-selector {
+  width: 100%;
+}
+
+.lang-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.8rem;
+}
+
+.lang-pills {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.lang-pill {
+  border: 1.5px solid var(--sage);
+  border-radius: 100px;
+  padding: 0.28rem 0.72rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  background: none;
+  transition: all 0.2s;
+}
+
+.lang-pill:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.lang-pill.on {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--white);
+}

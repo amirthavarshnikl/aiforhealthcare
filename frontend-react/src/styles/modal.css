@@ -1,0 +1,166 @@
+/* ══════════════════════════════════════════════════════════════ */
+/* MODAL STYLES */
+/* ══════════════════════════════════════════════════════════════ */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 60, 61, 0.45);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal {
+  background: var(--white);
+  border-radius: 18px;
+  width: min(560px, 94vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(44, 60, 61, 0.25);
+  animation: slideUp 0.25s ease;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 1.6rem 1rem;
+  border-bottom: 1.5px solid var(--sage);
+}
+
+.modal-header h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  color: var(--teal);
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.modal-close:hover {
+  background: var(--sage);
+}
+
+.modal-close svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--muted);
+}
+
+.modal-body {
+  padding: 1.4rem 1.6rem 1.8rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.form-group input,
+.form-group select {
+  border: 1.5px solid var(--sage);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: var(--teal-dark);
+  background: var(--white);
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--teal);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bmi-box {
+  background: linear-gradient(135deg, var(--teal), #4e6a6b);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.bmi-left .bmi-label {
+  font-size: 0.75rem;
+  color: var(--sage);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.bmi-value {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem;
+  color: var(--white);
+  line-height: 1;
+}
+
+.bmi-category {
+  font-size: 0.8rem;
+  color: var(--green);
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.btn-save {
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.8rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.btn-save:hover {
+  background: var(--green-dark);
+}
+
+@media (max-width: 680px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    width: 94vw;
+  }
+}

@@ -1,0 +1,206 @@
+/* ══════════════════════════════════════════════════════════════ */
+/* HEALTH INSIGHTS PAGE STYLES */
+/* ══════════════════════════════════════════════════════════════ */
+
+.insights-page {
+  min-height: calc(100vh - 66px);
+  background: var(--white);
+  padding: 60px 6vw;
+}
+
+.insights-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.insights-container h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.insight-card {
+  border-radius: 14px;
+  padding: 1.8rem;
+  border: 1.5px solid;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.insight-card:hover {
+  transform: translateY(-3px);
+}
+
+.insight-card.warning {
+  background: rgba(204, 148, 0, 0.06);
+  border-color: rgba(204, 148, 0, 0.2);
+}
+
+.insight-card.success {
+  background: rgba(137, 190, 77, 0.06);
+  border-color: rgba(137, 190, 77, 0.2);
+}
+
+.insight-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.insight-badge {
+  font-size: 1.8rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.insight-badge.warning {
+  background: rgba(204, 148, 0, 0.15);
+}
+
+.insight-badge.success {
+  background: rgba(137, 190, 77, 0.15);
+}
+
+.insight-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--teal);
+  margin: 0;
+}
+
+.insight-description {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 1rem 0;
+  line-height: 1.65;
+}
+
+.insight-footer {
+  font-size: 0.85rem;
+  color: var(--teal-dark);
+  line-height: 1.6;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(61, 81, 82, 0.1);
+}
+
+.insight-footer strong {
+  display: block;
+  color: var(--teal);
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.insights-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 2rem;
+  border-top: 1.5px solid var(--sage);
+}
+
+.btn-primary,
+.btn-secondary {
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  border: 1.5px solid;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: var(--white);
+  border-color: var(--green);
+}
+
+.btn-primary:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--teal);
+  border-color: var(--sage);
+}
+
+.btn-secondary:hover {
+  border-color: var(--teal);
+  background: rgba(189, 203, 183, 0.2);
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--teal);
+}
+
+.breadcrumb span {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+@media (max-width: 680px) {
+  .insights-page {
+    padding: 40px 6vw;
+  }
+
+  .insights-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insights-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}

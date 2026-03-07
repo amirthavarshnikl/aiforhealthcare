@@ -1,0 +1,175 @@
+/* ══════════════════════════════════════════════════════════════ */
+/* GLOBAL STYLES - ReportEase */
+/* ══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap');
+
+/* ── COLOR PALETTE ── */
+:root {
+  --green: #89BE4D;
+  --green-dark: #6fa038;
+  --teal: #3D5152;
+  --teal-dark: #2c3c3d;
+  --sage: #BDCBB7;
+  --white: #FEFEFE;
+  --muted: #5e6e6f;
+  --shadow: 0 4px 24px rgba(61, 81, 82, 0.1);
+}
+
+/* ── GLOBAL RESET ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--teal-dark);
+  overflow-x: hidden;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Serif Display', serif;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1rem; }
+
+p { font-size: 0.95rem; line-height: 1.65; }
+
+/* ── BUTTONS ── */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+/* ── SVG STYLING ── */
+svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── INPUTS ── */
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid var(--sage);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sage);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--teal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── UTILITIES ── */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 6vw;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt { margin-top: 1rem; }
+.mb { margin-bottom: 1rem; }
+.px { padding-left: 6vw; padding-right: 6vw; }
+.py { padding-top: 1rem; padding-bottom: 1rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  :root {
+    font-size: 14px;
+  }
+}

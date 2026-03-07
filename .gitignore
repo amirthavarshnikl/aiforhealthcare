@@ -1,0 +1,106 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Dependencies
+node_modules/
+npm-debug.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+ocr_service.log
+simplify_service.log
+translate_service.log
+rag_service.log
+report_pipeline.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+data/
+*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+.directory
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Backend specific
+__pycache__
+.pytest_cache
+.mypy_cache
+.env.local
+
+# Frontend specific
+node_modules
+dist
+build
+*.min.js
+*.min.css
+
+# Project specific
+.claude/
+.claude/worktrees/
+models/
+vector-db/
+*.pem
+*.key
+
+# OS & Editor
+.DS_Store
+.AppleDouble
+.LSOverride
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+*.swp

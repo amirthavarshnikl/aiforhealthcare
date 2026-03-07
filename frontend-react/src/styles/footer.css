@@ -1,0 +1,37 @@
+/* ══════════════════════════════════════════════════════════════ */
+/* FOOTER STYLES */
+/* ══════════════════════════════════════════════════════════════ */
+
+.footer {
+  background: var(--teal-dark);
+  border-top: 1px solid rgba(189, 203, 183, 0.12);
+  padding: 1.8rem 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.footer-name {
+  font-family: 'DM Serif Display', serif;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.footer-name span {
+  color: var(--green);
+}
+
+.footer small {
+  color: var(--sage);
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+@media (max-width: 680px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
