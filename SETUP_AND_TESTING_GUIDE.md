@@ -64,7 +64,7 @@ nano .env
 # Connection String Format:
 # mongodb+srv://username:password@cluster0.mongodb.net/medicalreport?retryWrites=true&w=majority
 
-MONGO_URI=mongodb+srv://your_username:your_password@cluster0.mongodb.net/medicalreport?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://<username>:<your_password>@cluster0.mongodb.net/medicalreport?retryWrites=true&w=majority
 DB_NAME=medicalreport
 ```
 
@@ -81,7 +81,7 @@ DB_NAME=medicalreport
 ```ini
 # Get free API key from: https://makersuite.google.com/app/apikey
 
-GEMINI_API_KEY=your_actual_gemini_api_key_here
+GEMINI_API_KEY=<your_gemini_api_key>
 ```
 
 **Why Gemini API?**
@@ -102,7 +102,7 @@ GEMINI_API_KEY=your_actual_gemini_api_key_here
 python -c "import secrets; print(secrets.token_urlsafe(32))"
 
 # Copy output to .env
-SECRET_KEY=generated-random-key-here
+SECRET_KEY=<generate_random_secret_key>
 
 # Token expiration (hours)
 ACCESS_TOKEN_EXPIRE_HOURS=24
@@ -120,17 +120,17 @@ VECTOR_DB_PATH=./data/vector-db
 
 ```ini
 # Database
-MONGO_URI=mongodb+srv://user123:SecurePass@cluster0.mongodb.net/medicalreport?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/medicalreport?retryWrites=true&w=majority
 DB_NAME=medicalreport
 
 # Vector Database
 VECTOR_DB_PATH=./data/vector-db
 
 # AI Services
-GEMINI_API_KEY=AIzaSyC3_chav1JuPP2mzgkBiFata_78I9Ub__A
+GEMINI_API_KEY=<your_gemini_api_key>
 
 # Authentication
-SECRET_KEY=your-generated-random-key-here
+SECRET_KEY=<your-generated-random-key>
 ACCESS_TOKEN_EXPIRE_HOURS=24
 
 # Server
@@ -308,8 +308,8 @@ curl -X POST http://localhost:8000/api/auth/register \
 # Response will include JWT token:
 {
   "success": true,
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "user_id": "507f1f77bcf86cd799439011"
+  "token": XXXX,
+  "user_id": XXX
 }
 
 # 2. Save the token (you'll need it for authenticated requests)
@@ -416,7 +416,7 @@ EOF
 cat backend/.env | grep MONGO_URI
 
 # 2. Test MongoDB connection string
-python -c "from pymongo import MongoClient; MongoClient('YOUR_MONGO_URI').admin.command('ping'); print('✓ Connected')"
+python -c "from pymongo import MongoClient; MongoClient('<YOUR_MONGO_URI>').admin.command('ping'); print('✓ Connected')"
 
 # 3. Verify MongoDB Atlas:
 #    - Is cluster running? Check at https://account.mongodb.com/
