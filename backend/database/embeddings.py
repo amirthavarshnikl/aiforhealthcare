@@ -1,16 +1,23 @@
 from sentence_transformers import SentenceTransformer
-from typing import List, Union
+from typing import List
 import asyncio
 import logging
 
 logger = logging.getLogger(__name__)
 
-# Initialize the embedding model
+# Lazy-load the embedding model to avoid heavy import-time overhead
 MODEL_NAME = "all-MiniLM-L6-v2"
-model = SentenceTransformer(MODEL_NAME)
+_model = None
 
-logger.info(f"Embeddings Model Loaded: {MODEL_NAME}")
-print(f"[OK] Embeddings Model Loaded: {MODEL_NAME}")
+
+def get_embedding_model() -> SentenceTransformer:
+    """Lazy initialize the embedding model."""
+    global _model
+    if _model is None:
+        logger.info(f"Loading embeddings model: {MODEL_NAME}")
+        _model = SentenceTransformer(MODEL_NAME)
+        logger.info(f"Embeddings model loaded: {MODEL_NAME}")
+    return _model
 
 
 async def generate_embedding(text: str) -> List[float]:
@@ -24,6 +31,7 @@ async def generate_embedding(text: str) -> List[float]:
         Embedding vector as list of floats
     """
     try:
+        model = get_embedding_model()
         # Run CPU-intensive operation in thread pool to avoid blocking event loop
         embedding = await asyncio.to_thread(
             model.encode,
@@ -51,6 +59,7 @@ async def generate_embeddings_batch(
         List of embedding vectors
     """
     try:
+        model = get_embedding_model()
         # Run CPU-intensive operation in thread pool to avoid blocking event loop
         embeddings = await asyncio.to_thread(
             model.encode,

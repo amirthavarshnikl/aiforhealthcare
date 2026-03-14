@@ -4,7 +4,7 @@ python-multipart
 pillow
 easyocr
 pytesseract
-opencv-python
+opencv-python-headless
 numpy
 pandas
 torch
